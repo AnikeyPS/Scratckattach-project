@@ -6,7 +6,7 @@ except ImportError:
     import os
     import sys
     os.system("pip install scratchattach")
-    os.system("pip install tkinter")
+    os.system("pip install tk")
     os.system("pip install pyttk")
     print("Please restart this project")
     sys.exit()
