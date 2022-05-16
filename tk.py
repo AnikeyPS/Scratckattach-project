@@ -26,8 +26,10 @@ def cloud_variable():
 
 
 def ent1_ok():
-    if ent1.get().isnumeric():
+    if ent1.get().isnumeric() and ent2.get() and ent3.get().isnumeric():
         proj_sess = sess.connect_cloud(ent1.get())
+        proj_sess.set_var(ent2.get(), ent3.get())
+        back()
 
 
 def back():
