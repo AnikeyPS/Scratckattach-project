@@ -8,6 +8,7 @@ except ImportError:
     os.system("pip install scratchattach")
     os.system("pip install tk")
     os.system("pip install pyttk")
+    os.system("pip install requests")
     print("Please restart this project")
     sys.exit()
 
