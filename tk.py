@@ -21,6 +21,7 @@ def cloud_variable():
     ent3_lab.pack()
     ent3.pack()
     b1.pack_forget()
+    b2.pack_forget()
     ent1_but.pack()
     back_but.pack()
 
@@ -38,15 +39,22 @@ def back():
     ent1_lab.pack_forget()
     ent1_but.pack_forget()
     b1.pack()
+    b2.pack()
     ent2.pack_forget()
     ent3.pack_forget()
     ent3_lab.pack_forget()
     ent2_lab.pack_forget()
 
 
+def about_p():
+    pass
+
+
 app = tk.Tk()
 b1 = ttk.Button(app, text="Set cloud variable value", command=cloud_variable)
 b1.pack()
+b2 = ttk.Button(app, text="About project", command=about_p)
+b2.pack()
 app.resizable(False, False)
 ent1 = ttk.Entry(app)
 ent1_lab = ttk.Label(app, text="Please print the project ID:")
