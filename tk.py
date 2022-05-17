@@ -9,7 +9,7 @@ except ImportError:
     os.system("pip install tk")
     os.system("pip install pyttk")
     os.system("pip install requests")
-    print("Please restart this project")
+    print("Please, restart this project")
     sys.exit()
 
 
@@ -35,6 +35,8 @@ def ent1_ok():
 
 def back():
     ent1.pack_forget()
+    ent4.pack_forget()
+    ent4_lab.pack_forget()
     back_but.pack_forget()
     ent1_lab.pack_forget()
     ent1_but.pack_forget()
@@ -47,7 +49,11 @@ def back():
 
 
 def about_p():
-    pass
+    b1.pack_forget()
+    b2.pack_forget()
+    ent4_lab.pack()
+    ent4.pack()
+    back_but.pack()
 
 
 app = tk.Tk()
@@ -57,12 +63,15 @@ b2 = ttk.Button(app, text="About project", command=about_p)
 b2.pack()
 app.resizable(False, False)
 ent1 = ttk.Entry(app)
-ent1_lab = ttk.Label(app, text="Please print the project ID:")
+ent1_lab = ttk.Label(app, text="Please, print the project ID:")
 ent2 = ttk.Entry(app)
-ent2_lab = ttk.Label(app, text="Please print the variable name:")
+ent2_lab = ttk.Label(app, text="Please, print the variable name:")
 ent3 = ttk.Entry()
-ent3_lab = ttk.Label(app, text="Please print the new variable value:")
+ent3_lab = ttk.Label(app, text="Please, print the new variable value:")
 ent1_but = ttk.Button(app, text="Ok", command=ent1_ok)
+ent4 = ttk.Entry()
+ent4_but = ttk.Button(app, text="Ok")
+ent4_lab = ttk.Label(app, text="Please, print the project ID:")
 back_but = ttk.Button(app, text="Back", command=back)
 sess = s3.login("AnikeyPS", open("password.txt", "r").read())
 app.mainloop()
