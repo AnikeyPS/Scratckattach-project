@@ -42,6 +42,7 @@ def back():
     ent1_but.pack_forget()
     b1.pack()
     b2.pack()
+    ent4_but.pack_forget()
     ent2.pack_forget()
     ent3.pack_forget()
     ent3_lab.pack_forget()
@@ -53,6 +54,7 @@ def about_p():
     b2.pack_forget()
     ent4_lab.pack()
     ent4.pack()
+    ent4_but.pack()
     back_but.pack()
 
 
@@ -73,5 +75,8 @@ ent4 = ttk.Entry()
 ent4_but = ttk.Button(app, text="Ok")
 ent4_lab = ttk.Label(app, text="Please, print the project ID:")
 back_but = ttk.Button(app, text="Back", command=back)
-sess = s3.login("AnikeyPS", open("password.txt", "r").read())
+autofill = open("AutoFill.txt", "r").read()
+password = autofill.split(",")[0]
+username = autofill.split(",")[1].strip()
+sess = s3.login(password, username)
 app.mainloop()
